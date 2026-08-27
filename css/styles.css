@@ -1,132 +1,326 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f4f4;
-  color: #22222265;
+  color: #222222;
   line-height: 1.6;
 }
 
+
+/* ========================================
+   HEADER
+======================================== */
+
 header {
-  background-color: #111;
-  color: white;
-  padding: 20px;
+  background-color: #111111;
+  color: #ffffff;
+  padding: 25px 20px;
   text-align: center;
 }
 
 header h1 {
+  color: #ffffff;
   margin-bottom: 15px;
+  font-size: 2rem;
 }
+
+
+/* ========================================
+   NAVEGACIÓN
+======================================== */
 
 nav ul {
   list-style: none;
+
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
 }
 
 nav a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
 }
 
-nav a:hover,
-nav a:focus {
+nav a:visited {
+  color: #ffffff;
+}
+
+nav a:hover {
   text-decoration: underline;
 }
 
+nav a:focus {
+  outline: 3px solid #ffcc00;
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   SECCIONES GENERALES
+======================================== */
+
 section {
-  padding: 40px 20px;
+  padding: 45px 20px;
 }
 
-#inicio {
-  text-align: center;
-  background-color: #ddd;
-}
-
-#inicio h2 {
-  margin-bottom: 10px;
-}
-
-#motos h2,
-#nosotros h2,
-#contacto h2 {
+section h2 {
+  color: #222222;
   margin-bottom: 20px;
 }
 
+section p {
+  color: #222222;
+}
+
+
+/* ========================================
+   INICIO
+======================================== */
+
+#inicio {
+  background-color: #e5e5e5;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+#inicio h2 {
+  color: #222222;
+  margin-bottom: 10px;
+}
+
+#inicio p {
+  color: #222222;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   SECCIÓN DE MOTOS
+======================================== */
+
+#motos {
+  background-color: #f4f4f4;
+}
+
+#motos h2 {
+  text-align: center;
+}
+
+
+/* CONTENEDOR FLEXBOX */
+
 .motos {
   display: flex;
+
   flex-direction: column;
+
+  justify-content: center;
+  align-items: stretch;
+
   gap: 20px;
 }
 
+
+/* ========================================
+   TARJETAS DE MOTOS
+======================================== */
+
 .moto {
-  background-color: white;
+  background-color: #ffffff;
+  color: #222222;
+
   padding: 20px;
-  border: 1px solid #ccc;
+
+  border: 1px solid #cccccc;
   border-radius: 8px;
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
+  gap: 12px;
 }
+
+
+/* IMÁGENES */
+
+.moto img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+
+/* NOMBRE DE LA MOTO */
 
 .moto h3 {
-  color: #b30000;
+  color: #8b0000;
+  font-size: 1.3rem;
 }
 
-#nosotros {
-  background-color: white;
+
+/* TEXTO DE LA TARJETA */
+
+.moto p {
+  color: #222222;
 }
+
+
+/* ========================================
+   SOBRE NOSOTROS
+======================================== */
+
+#nosotros {
+  background-color: #ffffff;
+}
+
+#nosotros h2 {
+  color: #222222;
+}
+
+#nosotros p {
+  color: #222222;
+  max-width: 900px;
+}
+
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+#contacto {
+  background-color: #f4f4f4;
+}
+
+#contacto h2 {
+  color: #222222;
+}
+
+
+/* ========================================
+   FORMULARIO
+======================================== */
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
+  gap: 12px;
+
   max-width: 600px;
 }
 
-input,
-textarea {
-  padding: 10px;
-  border: 1px solid #555;
-  border-radius: 5px;
+
+/* LABELS */
+
+label {
+  color: #222222;
+  font-weight: bold;
 }
 
-button {
+
+/* CAMPOS */
+
+input,
+textarea {
+  width: 100%;
+
   padding: 12px;
-  background-color: #b30000;
-  color: white;
+
+  background-color: #ffffff;
+  color: #222222;
+
+  border: 1px solid #555555;
+  border-radius: 5px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+
+/* FOCUS ACCESIBLE */
+
+input:focus,
+textarea:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+
+/* ========================================
+   BOTÓN
+======================================== */
+
+button {
+  padding: 12px 20px;
+
+  background-color: #8b0000;
+  color: #ffffff;
+
   border: none;
   border-radius: 5px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #800000;
+  background-color: #660000;
 }
 
-input:focus,
-textarea:focus,
-button:focus,
-a:focus {
-  outline: 3px solid orange;
+button:focus {
+  outline: 3px solid #005fcc;
   outline-offset: 3px;
 }
 
+
+/* ========================================
+   FOOTER
+======================================== */
+
 footer {
-  background-color: #111;
-  color: white;
+  background-color: #111111;
+  color: #ffffff;
+
+  padding: 25px 20px;
+
   text-align: center;
-  padding: 20px;
 }
 
-/* TABLETA */
+footer p {
+  color: #ffffff;
+}
+
+
+/* ========================================
+   TABLETA
+   768px EN ADELANTE
+======================================== */
+
 @media (min-width: 768px) {
 
   nav ul {
@@ -138,22 +332,34 @@ footer {
   .motos {
     flex-direction: row;
     flex-wrap: wrap;
-  }
 
-  .moto {
-    flex: 1 1 45%;
-  }
-}
-
-/* ESCRITORIO */
-@media (min-width: 1024px) {
-
-  .motos {
     justify-content: center;
     align-items: stretch;
   }
 
   .moto {
-    flex: 1 1 30%;
+    flex: 1 1 calc(50% - 20px);
   }
+
+}
+
+
+/* ========================================
+   COMPUTADOR
+   1024px EN ADELANTE
+======================================== */
+
+@media (min-width: 1024px) {
+
+  .motos {
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .moto {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+
 }
